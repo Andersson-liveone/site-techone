@@ -1,7 +1,8 @@
-on: 
+on:
   push:
     branches:
       - main
+
 name: Deploy website
       
 jobs:
@@ -9,11 +10,11 @@ jobs:
     name: 🎉 Deploy
     runs-on: ubuntu-latest
     steps:
-      - name: 🚚 Buscando ultimo codigo
+      - name: 🚚 Buscando último código
         uses: actions/checkout@v2
 
-      - name: 📂 Sicronizando files
-        uses: SamKirkland/FTP-Deploy-Action@4.0.0
+      - name: 📂 Sincronizando arquivos
+        uses: SamKirkland/FTP-Deploy-Action@v4
         with:
           server: ${{ secrets.FTP_HOST }}
           username: ${{ secrets.FTP_USER }}
