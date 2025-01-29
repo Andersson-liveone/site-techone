@@ -12,7 +12,7 @@ jobs:
     steps:
       - name: 🚚 Buscando último código
         uses: actions/checkout@v2
-
+ 
       - name: 📂 Sincronizando arquivos
         uses: SamKirkland/FTP-Deploy-Action@4.0.0
         with:
