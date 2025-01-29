@@ -1,3 +1,3 @@
 <?php
-echo "hello world - website nicely updated";
+echo "hello world - website nicely updated BELECO";
 ?>
