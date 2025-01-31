@@ -16,6 +16,12 @@
                 text-align: justify;
                 margin-bottom: 2vw;
             }
+            @media screen and (max-width: 768px) {
+                .conteudo{
+                    font-size: 2.5vw;
+                }
+                
+            }
 
 
         </style>
@@ -25,19 +31,17 @@
             <div class="row">
                 <div class="col-md-6 mb-4">
                     <p class="titulo">O que são softwares?</p>
-                    <p class="conteudo">
                         <ul>
                             <li class="conteudo">
-                                Os softwares säo ferramentas tecnológicas essenciais que compõem o funcionamento de dispositivos eletronicos, como computadores, smartphones e sistemas corporativos. De maneira simples, um software é um conjunto de instruçoes e códigos programados que determinam como o hardware deve executar tarefas específicas.
+                                Os softwares são ferramentas tecnológicas essenciais que compõem o funcionamento de dispositivos eletronicos, como computadores, smartphones e sistemas corporativos. De maneira simples, um software é um conjunto de instruçoes e códigos programados que determinam como o hardware deve executar tarefas específicas.
                             </li>
                             <li class="conteudo">
                                 No ambiente corporativo, os softwares desempenham um papel crucial na automação de processos, organização de informações, otimização de recursos e melhoria da tomada de decisão. A personalização e a integração dessas ferramentas podem transformar a eficiência operacional, proporcionando competitividade e inovação para as empresas.
                             </li>
                             <li class="conteudo">
-                                Em resumo, os softwares säo mais do que cõdigos: säo soluçoes que conectam pessoas, processos e tecnologia para alcançar resultados extraordinários.
+                                Em resumo, os softwares são mais do que cõdigos: são soluçoes que conectam pessoas, processos e tecnologia para alcançar resultados extraordinários.
                             </li>
                         </ul>
-                    </p>
                 </div>
                 <div class="col-md-6 mb-4">
                     <img src="img/softwares.png" alt="" class="img-fluid">

@@ -4,6 +4,8 @@
         <link rel="icon" href="img/simboloTech.png" type="image/x-icon">
         <!-- Bootstrap CSS -->
         <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600&display=swap" rel="stylesheet">
+
 
         <!-- Bootstrap JS and dependencies -->
         <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
@@ -103,6 +105,20 @@
                 opacity: 1; /* A imagem se torna visível */
                 visibility: visible; /* Garante que a imagem apareça quando for visível */
             }
+            .col-md-4 img {
+                opacity: 0; /* A imagem começa invisível */
+                transition: opacity 1s ease-in-out; /* Animação suave de transição */
+                width: 70%; /* Ajusta a largura da imagem (opcional) */
+                height: auto; /* Mantém a proporção da imagem */
+                margin-left: 2vw; /* Centraliza a imagem horizontalmente */
+                margin-top: 10vw;
+                visibility: hidden; /* Inicialmente oculta */
+            }
+
+            .col-md-4 img.visible {
+                opacity: 1; /* A imagem se torna visível */
+                visibility: visible; /* Garante que a imagem apareça quando for visível */
+            }
 
             /* Adicionando a transição para o texto */
             .titulo, .subtitulo, .conteudo {
@@ -140,6 +156,14 @@
             }
 
             @media screen and (max-width: 768px) {
+                .menu .nav-link:hover {
+                    background-color: rgba(89, 0, 156, 1);
+                    color: #dcdcdc; /* Cor da fonte um pouco mais escura (cinza claro) */
+                    box-shadow: 0px 0px 20px 4px rgba(89, 0, 156, 0.40); /* Aumentando a sombra */
+                    transform: scale(1.05); /* Aumentando a escala para um efeito de destaque maior */
+                    border-radius: 0px;
+                    padding-left: 10px;
+                }
                 .titulo {
                     font-size: 4vw;
                 }
@@ -157,6 +181,16 @@
                 .container {
                     max-width: 90vw;
                     padding-top: 30vw;
+                }
+                .col-md-4 img {
+                    opacity: 0; /* A imagem começa invisível */
+                    transition: opacity 1s ease-in-out; /* Animação suave de transição */
+                    width: 50%; /* Ajusta a largura da imagem (opcional) */
+                    height: auto; /* Mantém a proporção da imagem */
+                    margin-left: 16vw; /* Centraliza a imagem horizontalmente */
+                    margin-top: 18vw;
+                    margin-bottom: 8vw;
+                    visibility: hidden; /* Inicialmente oculta */
                 }
             }
 
