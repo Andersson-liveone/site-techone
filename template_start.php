@@ -154,6 +154,30 @@
                 text-align: justify;
                 margin-bottom: 2vw;
             }
+            #overlay {
+                position: fixed;
+                top: 0;
+                left: 0;
+                width: 100%;
+                height: 100%;
+                background-color: rgba(0, 0, 0, 0.5); /* Cor escura com opacidade */
+                z-index: 9998; /* Fica atrás do loading */
+                display: none; /* Inicialmente oculto */
+                opacity: 1; /* Opacidade inicial */
+                transition: opacity 1s ease-out; /* Transição suave */
+            }
+
+            /* GIF de Loading */
+            #loading {
+                position: fixed;
+                top: 50%;
+                left: 50%;
+                transform: translate(-50%, -50%); /* Centraliza o GIF */
+                z-index: 9999;
+                display: none; /* Inicialmente oculto */
+                opacity: 1; /* Opacidade inicial */
+                transition: opacity 1s ease-out; /* Transição suave */
+            }
 
             @media screen and (max-width: 768px) {
                 .menu .nav-link:hover {
@@ -198,6 +222,13 @@
 
     </head>
     <body>
+        <!-- Overlay escuro -->
+        <div id="overlay"></div>
+
+        <!-- GIF de Loading -->
+        <div id="loading">
+            <img src="img/loading.gif" alt="Carregando..." style="width: 100px;"/>
+        </div>
         <nav class="navbar navbar-expand-lg navbar-dark menu" >
             <a class="navbar-brand" href="http://localhost/site-techone/index.php">
                 <img src="img/logoTech.png" alt="TECH ONE" class="img-fluid" style="max-height: 80px; width: auto;">
@@ -232,10 +263,39 @@
                         <a class="nav-link" href="http://localhost/site-techone/canva.php">Duvidas frequentes</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#">Blog</a>
+                        <a class="nav-link" href="blog.php">Blog</a>
                     </li>
                 </ul>
             </div>
         </nav>
     </body>
 </html>
+<script>
+    function ativaLoading() {
+       var loading = document.getElementById("loading");
+       var overlay = document.getElementById("overlay");
+       loading.style.display = "block";  // Exibe o GIF de carregamento
+       overlay.style.display = "block";  // Exibe o overlay escuro
+    }
+    function desativaLoading() {
+                var loading = document.getElementById("loading");
+                var overlay = document.getElementById("overlay");
+
+                // Inicia a transição para ocultar
+                loading.style.opacity = "0"; 
+                overlay.style.opacity = "0";
+
+                // Após a transição (1 segundo), esconde completamente
+                setTimeout(function() {
+                    loading.style.display = "none"; // Oculta o loading
+                    overlay.style.display = "none"; // Oculta o overlay
+                }, 1000); // Tempo igual à duração da transição
+            }
+   // Espera a página carregar e ativa o loading
+   $(document).ready(function () {
+       ativaLoading(); 
+        setTimeout(function() {
+            desativaLoading();
+        }, 1000); // Tempo de 1 segundo de atraso
+   });
+</script>
