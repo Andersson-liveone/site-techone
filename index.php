@@ -301,17 +301,3 @@
         <div class="container"></div>
     </body>
 </html>
-
-
-<!-- Soluçoes sob medida
-Atendem exatamente às necessidades do seu negôcio, sem recursos genéricos ou desnecessérios.
-
-Integraçâo perfeita
-Conectam diferentes sistemas e departamentos, otimizando o fluxo de trabalho e centralizando informaçoes.
-
-Reduçâo de custos a longo prazo
-Com funcionalidades especificas. evitam desperdicios e investimentos em soluçoes genéricas pouco eficientes.
-
-Vantagem competitiva
-Oferecem ferramentas exclusivas que colocam sua empresa à frente no mercado.
- -->

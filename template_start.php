@@ -99,7 +99,7 @@
                         </a>
                         <div class="dropdown-menu" aria-labelledby="navBarServicos">
                             <a class="dropdown-item" href="#">O que são softwares</a>
-                            <a class="dropdown-item" href="#">Benefícios de um Software</a>
+                            <a class="dropdown-item" href="beneficios.php">Benefícios de um Software</a>
                         </div>
                     </li>
                     <li class="nav-item">
