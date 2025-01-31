@@ -89,9 +89,8 @@
                             Conheça a Tech
                         </a>
                         <div class="dropdown-menu" aria-labelledby="navBarConhecaATech">
-                            <a class="dropdown-item" href="#">Quem somos</a>
-                            <a class="dropdown-item" href="#">Richard</a>
-                            <a class="dropdown-item" href="#">Amanda</a>
+                            <a class="dropdown-item" href="#">Sobre nós</a>
+                            <a class="dropdown-item" href="#">Nossas redes</a>
                         </div>
                     </li>
                     <li class="nav-item dropdown">
@@ -99,8 +98,8 @@
                             Softwares personalizados
                         </a>
                         <div class="dropdown-menu" aria-labelledby="navBarServicos">
-                            <a class="dropdown-item" href="#">Java</a>
-                            <a class="dropdown-item" href="#">PHP</a>
+                            <a class="dropdown-item" href="#">O que são softwares</a>
+                            <a class="dropdown-item" href="#">Benefícios de um Software</a>
                             <a class="dropdown-item" href="#">Python</a>
                         </div>
                     </li>
