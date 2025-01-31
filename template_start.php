@@ -230,7 +230,7 @@
             <img src="img/loading.gif" alt="Carregando..." style="width: 100px;"/>
         </div>
         <nav class="navbar navbar-expand-lg navbar-dark menu" >
-            <a class="navbar-brand" href="http://localhost/site-techone/index.php">
+            <a class="navbar-brand" href="index.php">
                 <img src="img/logoTech.png" alt="TECH ONE" class="img-fluid" style="max-height: 80px; width: auto;">
             </a>
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
