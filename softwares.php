@@ -8,59 +8,6 @@
         <title>Softwares</title>
 
         <style>
-            body {
-                background-image: url('img/backgroundPadrao.png');
-                background-attachment: fixed; /* Faz com que o fundo fique fixo */
-                background-size: cover; /* Garante que a imagem de fundo cubra toda a tela */
-                background-position: center; /* Centraliza a imagem de fundo */
-                margin: 0;
-                padding: 0;
-                font-family: Arial, sans-serif;
-            }
-
-            .row{
-                margin-bottom: 8vw;
-            }
-
-            .container {
-                max-width: 90vw;
-                padding-top: 10vw;
-            }
-
-            .col-md-6 img {
-                opacity: 0; /* A imagem começa invisível */
-                transition: opacity 1s ease-in-out; /* Animação suave de transição */
-                width: 85%; /* Ajusta a largura da imagem (opcional) */
-                height: auto; /* Mantém a proporção da imagem */
-                margin-left: 3vw; /* Centraliza a imagem horizontalmente */
-                visibility: hidden; /* Inicialmente oculta */
-            }
-
-            .col-md-6 img.visible {
-                opacity: 1; /* A imagem se torna visível */
-                visibility: visible; /* Garante que a imagem apareça quando for visível */
-            }
-
-            /* Adicionando a transição para o texto */
-            .titulo, .subtitulo, .conteudo {
-                opacity: 0; /* O texto começa invisível */
-                visibility: hidden; /* Inicialmente invisível */
-                transition: opacity 1s ease-in-out; /* Transição suave */
-            }
-
-            .titulo.visible, .subtitulo.visible, .conteudo.visible {
-                opacity: 1; /* O texto se torna visível */
-                visibility: visible; /* Garante que o texto apareça */
-            }
-
-            .titulo {
-                font-family: 'Montserrat', sans-serif;
-                font-size: 2vw;
-                color: #ffffff;
-                font-weight: bold;
-                margin-bottom: 2vw;
-                margin-left: 3vw;
-            }
 
             .conteudo {
                 font-family: 'Montserrat', sans-serif;
@@ -68,27 +15,6 @@
                 color: #ffffff;
                 text-align: justify;
                 margin-bottom: 2vw;
-            }
-
-            @media screen and (max-width: 768px) {
-                .titulo {
-                    font-size: 4vw;
-                }
-
-                .subtitulo {
-                    font-size: 3vw;
-                }
-
-                .conteudo {
-                    font-size: 2.5vw;
-                }              
-                ul{
-                    margin-left: -7vw;
-                }  
-                .container {
-                    max-width: 90vw;
-                    padding-top: 30vw;
-                }
             }
 
 
