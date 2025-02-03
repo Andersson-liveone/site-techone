@@ -5,7 +5,6 @@
 
     require 'vendor/autoload.php';
 
-    // envia_email_padrao();
     envia_email_padrao();
     function envia_email_padrao() {
         $nome = $_POST['nome'];
@@ -19,21 +18,41 @@
         $mail = new PHPMailer(true);
 
         // HTML do e-mail com interpolação de variáveis
-        $htmlEmail = '<div style="max-width: 100%; margin: 0 auto; background-color: #ffffff; overflow: hidden; box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); font-family: Arial, sans-serif; background-color: #f4f4f4;">
-                            <div style="background-image: url(\'https://techonebrasil.com.br/img/img_fundo_cabecalho_email.png\');background-repeat: round;padding: 51px;text-align:center;color:#ffffff;min-height: 90px;">
-                            </div>
-                            <div style="padding: 30px; text-align: center;">
-                                ' . $nome . ' deseja entrar em contato com a Tech One. Dados: ' . $ramo . ', ' . $telefone . ', ' . $mensagem . ', ' . $email  . '
-                            </div>
-                            <div style="background-color: #5e065a; padding: 10px 20px; color: #ffffff; text-align: center;">
-                                <p style="margin: 0;">Nos siga!</p>
-                                <a href="https://www.instagram.com/tech.one.br/" style="margin: 0 5px;"><img src="https://techonebrasil.com.br/website/img/icone_instagram.png" width="50" alt="Instagram"></a>
-                                <a href="https://www.facebook.com/profile.php?id=61560483996013" style="margin: 0 5px;"><img src="https://techonebrasil.com.br/website/img/icone_facebook.png" width="50" alt="Facebook"></a>
-                                <a href="https://www.linkedin.com/company/tech-one-br/?viewAsMember=true" style="margin: 0 5px;"><img src="https://techonebrasil.com.br/website/img/icone_linkedin.png" width="50" alt="Linkedin"></a>
-                                <a href="https://www.tiktok.com/@techone.oficial" style="margin: 0 5px;"><img src="https://techonebrasil.com.br/website/img/icone_tiktok.png" width="50" alt="TikTok"></a>
-                                <p style="margin: 10px 0;"><img src="https://techonebrasil.com.br//img/logo-techone.png" width="20" style=" margin: -6px 0px; "> <a href="https://www.techonebrasil.com.br" style="color: #ffffff; text-decoration: none;">www.techonebrasil.com.br</a></p>
-                            </div>
-                        </div>';
+        $htmlEmail = '
+                    <div style="max-width: 600px; margin: 0 auto; background-color: #5e065a; border-radius: 8px; box-shadow: 0 4px 6px rgba(187, 255, 0, 0); font-family: Arial, sans-serif; background-color:rgba(255, 0, 0, 0); overflow: hidden;">
+                        <div style="background-color: rgb(255, 255, 255); color: #5e065a; padding: 20px; text-align: center; font-size: 20px; font-weight: bold;">
+                            Novo Contato Recebido
+                        </div>
+                        <div style="padding: 30px; background-color: #ffffff; text-align: left; font-size: 16px; color: #333;">
+                            <p><strong>' . htmlspecialchars($nome) . '</strong> deseja entrar em contato com a Tech One.</p>
+                            <table style="width: 100%; border-collapse: collapse; margin-top: 20px;">
+                                <tr>
+                                    <td style="font-weight: bold; padding: 8px; border-bottom: 1px solid #ddd;">Nome:</td>
+                                    <td style="padding: 8px; border-bottom: 1px solid #ddd;">' . htmlspecialchars($nome) . '</td>
+                                </tr>
+                                <tr>
+                                    <td style="font-weight: bold; padding: 8px; border-bottom: 1px solid #ddd;">E-mail:</td>
+                                    <td style="padding: 8px; border-bottom: 1px solid #ddd;">' . htmlspecialchars($email) . '</td>
+                                </tr>
+                                <tr>
+                                    <td style="font-weight: bold; padding: 8px; border-bottom: 1px solid #ddd;">Ramo:</td>
+                                    <td style="padding: 8px; border-bottom: 1px solid #ddd;">' . htmlspecialchars($ramo) . '</td>
+                                </tr>
+                                <tr>
+                                    <td style="font-weight: bold; padding: 8px; border-bottom: 1px solid #ddd;">Telefone:</td>
+                                    <td style="padding: 8px; border-bottom: 1px solid #ddd;">' . htmlspecialchars($telefone) . '</td>
+                                </tr>
+                                <tr>
+                                    <td style="font-weight: bold; padding: 8px; vertical-align: top;">Mensagem:</td>
+                                    <td style="padding: 8px;">' . nl2br(htmlspecialchars($mensagem)) . '</td>
+                                </tr>
+                            </table>
+                        </div>
+                        <br>
+                        <div style="background-color:rgb(255, 255, 255); padding: 10px; text-align: center; color: #5e065a; font-size: 14px;">
+                            <p style="margin: 0;">Tech One - www.techonebrasil.com.br</p>
+                        </div>
+                    </div>';
 
         try {
             // Configurações do servidor SMTP
@@ -45,6 +64,9 @@
             $mail->SMTPSecure = PHPMailer::ENCRYPTION_STARTTLS; // Use STARTTLS ou SSL conforme o servidor suporta
             $mail->Port = 587; // Porta padrão para STARTTLS. Use 465 para SSL se necessário
 
+            // Configurações adicionais
+            $mail->CharSet = 'UTF-8';
+
             // Remetente e destinatário
             $mail->setFrom('softone@techonebrasil.com.br', 'SOFTONE'); // Substitua pelo seu e-mail e nome
             $mail->addAddress($destinatario); // E-mail do destinatário
@@ -55,6 +77,7 @@
             $mail->Body = $htmlEmail;
 
             $mail->send();
+            header('Location: index.php');
             echo json_encode('E-mail enviado com sucesso!');
         } catch (Exception $e) {
             echo json_encode("Erro ao enviar o e-mail: " . $mail->ErrorInfo);

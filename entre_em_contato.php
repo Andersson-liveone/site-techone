@@ -101,13 +101,13 @@
                                         <div class="form-group">
                                             <select name="ramo" id="ramo" class="form-control" required>
                                                 <option value="" disabled selected>Selecione seu ramo*</option>
-                                                <option value="saude">Saúde (Hospitais, Clínicas e Consultórios)</option>
-                                                <option value="educacao">Educação (Escolas, Faculdades e Cursos Online)</option>
-                                                <option value="varejo">Varejo (Lojas de Comércio, E-commerce, Supermercados)</option>
-                                                <option value="logistica">Logística e Transporte</option>
-                                                <option value="financas">Finanças e Contabilidade (Instituições Financeiras, Contadores e Gestores de Patrimônio)</option>
-                                                <option value="industria">Indústria e Manufatura (Fábricas, Produção, Automação)</option>
-                                                <option value="outros">Outros</option>
+                                                <option value="Saúde">Saúde (Hospitais, Clínicas e Consultórios)</option>
+                                                <option value="Educação">Educação (Escolas, Faculdades e Cursos Online)</option>
+                                                <option value="Varejo">Varejo (Lojas de Comércio, E-commerce, Supermercados)</option>
+                                                <option value="Logistica">Logística e Transporte</option>
+                                                <option value="Financas">Finanças e Contabilidade (Instituições Financeiras, Contadores e Gestores de Patrimônio)</option>
+                                                <option value="Industria">Indústria e Manufatura (Fábricas, Produção, Automação)</option>
+                                                <option value="Outros">Outros</option>
                                             </select>
                                         </div>
                                     </div>
@@ -161,6 +161,10 @@
             if (telefone.length < 15) { // (00) 00000-0000 tem 15 caracteres
                 alert('Por favor, preencha o telefone completo.');
                 e.preventDefault(); // Impede o envio do formulário
+            }
+            else{
+                alert('Mensagem enviada com sucesso!');
+                window.location.href = 'index.php';
             }
         });
     
