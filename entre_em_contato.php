@@ -113,7 +113,14 @@
                                     </div>
                                 </div>
                                 <div class="row mb-2">
-                                    <div class="col-md-12">
+                                    <div class="col-md-3">
+                                        <div class="form-group">
+                                            <select name="codigo_pais" id="codigo_pais" class="form-control" required>
+                                                <option value="" disabled selected>+*</option>
+                                            </select>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-9">
                                         <div class="form-group">
                                             <input name="telefone" type="text" class="form-control" id="telefone" placeholder="Telefone*" required>
                                         </div>
@@ -167,6 +174,33 @@
                 window.location.href = 'index.php';
             }
         });
+        fetch('https://restcountries.com/v3.1/all')
+        .then(response => response.json())
+        .then(data => {
+            const select = document.getElementById('codigo_pais');
+
+            // Filtra países com código de discagem válido e cria um array de objetos
+            const countriesWithCodes = data
+                .filter(country => country.idd && country.idd.root)
+                .map(country => ({
+                    code: `${country.idd.root}${country.idd.suffixes[0] || ''}`,
+                    name: country.name.common
+                }));
+
+            // Ordena pelo código em ordem crescente
+            countriesWithCodes.sort((a, b) => {
+                return parseInt(a.code.replace(/\D/g, '')) - parseInt(b.code.replace(/\D/g, ''));
+            });
+
+            // Adiciona as opções ao <select>
+            countriesWithCodes.forEach(country => {
+                const option = document.createElement('option');
+                option.value = country.code;
+                option.text = `${country.code} (${country.name})`;
+                select.appendChild(option);
+            });
+        })
+        .catch(error => console.error('Erro ao carregar códigos:', error));
     
     </script>
 </html>

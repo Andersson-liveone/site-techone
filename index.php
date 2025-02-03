@@ -119,7 +119,7 @@
                 padding: 1.5vw 3vw;
                 background-color: rgba(128, 0, 255, 0.2); /* Roxo com transparência */
                 width: 70%; /* Largura da div */
-                height: 45%; /* Altura da div */
+                height: 50%; /* Altura da div */
                 border-radius: 10px; /* Bordas arredondadas, opcional */
                 backdrop-filter: blur(10px); /* Efeito de desfoque do fundo */
                 position: absolute;

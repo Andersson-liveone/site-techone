@@ -83,7 +83,7 @@
                         </div>
                         <div class="col-md-4 mb-1">
                             <div class="caixa-conteudo">
-                                <a href="https://www.instagram.com/tech.one.br?igsh=MXBwcXVocGU0dXlpag==" class="rede">@tech.one.br</a>
+                                <a href="https://www.instagram.com/tech.one.br?igsh=MXBwcXVocGU0dXlpag==" class="rede">Instagram Tech</a>
                             </div>
                         </div>
                     </div>
@@ -93,7 +93,7 @@
                         </div>
                         <div class="col-md-4 mb-1">
                             <div class="caixa-conteudo">
-                                <a href="https://www.facebook.com/profile.php?id=61560483996013" class="rede">Tech One</a>
+                                <a href="https://www.facebook.com/profile.php?id=61560483996013" class="rede">Facebook Tech</a>
                             </div>
                         </div>
                     </div>                    
@@ -103,7 +103,7 @@
                         </div>
                         <div class="col-md-4 mb-1">
                             <div class="caixa-conteudo">
-                                <a href="https://www.linkedin.com/company/tech-one-br" class="rede">Tech One</a>
+                                <a href="https://www.linkedin.com/company/tech-one-br" class="rede">Linkedln Tech</a>
                             </div>
                         </div>
                     </div>
@@ -113,7 +113,7 @@
                         </div>
                         <div class="col-md-4 mb-1">
                             <div class="caixa-conteudo">
-                                <a href="https://www.tiktok.com/@techone.oficial " class="rede">Tech One</a>
+                                <a href="https://www.tiktok.com/@techone.oficial " class="rede">Tiktok Tech</a>
                             </div>
                         </div>
                     </div>

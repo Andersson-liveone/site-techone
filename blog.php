@@ -40,11 +40,20 @@
                 }
                 
             }
+            @media screen and (max-width: 428px) {
+                .clique-aqui{
+                    position : fixed;
+                    font-size: 8vw;
+                    top: 80%;
+                    left: 10%;
+                }
+                
+            }
         </style>
     </head>
     <body>
         <button class="btn clique-aqui" onclick="window.location.href = 'https://www.instagram.com/tech.one.br?igsh=MXBwcXVocGU0dXlpag==';">
-            Clique aqui
+            <b>Clique aqui</b>
         </button>
     </body>
 </html>
