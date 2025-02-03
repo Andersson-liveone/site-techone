@@ -97,7 +97,6 @@
                 transition: opacity 1s ease-in-out; /* Animação suave de transição */
                 width: 85%; /* Ajusta a largura da imagem (opcional) */
                 height: auto; /* Mantém a proporção da imagem */
-                margin-left: 3vw; /* Centraliza a imagem horizontalmente */
                 visibility: hidden; /* Inicialmente oculta */
             }
 
@@ -149,7 +148,7 @@
 
             .conteudo {
                 font-family: 'Montserrat', sans-serif;
-                font-size: 1.4vw;
+                font-size: 1.2vw;
                 color: #ffffff;
                 text-align: justify;
                 margin-bottom: 2vw;
@@ -244,7 +243,7 @@
                         </a>
                         <div class="dropdown-menu" aria-labelledby="navBarConhecaATech">
                             <a class="dropdown-item" href="sobre_nos.php">Sobre nós</a>
-                            <a class="dropdown-item" href="#">Nossas redes</a>
+                            <a class="dropdown-item" href="redes.php">Nossas redes</a>
                         </div>
                     </li>
                     <li class="nav-item dropdown">
@@ -260,7 +259,7 @@
                         <a class="nav-link" href="#">Orçamento</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="http://localhost/site-techone/canva.php">Duvidas frequentes</a>
+                        <a class="nav-link" href="duvidas.php">Duvidas frequentes</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="blog.php">Blog</a>
@@ -298,4 +297,33 @@
             desativaLoading();
         }, 1000); // Tempo de 1 segundo de atraso
    });
+   function checkVisibility() {
+        var images = document.querySelectorAll('.col-md-6 img');
+        var texts = document.querySelectorAll('.titulo, .subtitulo, .conteudo'); // Seleciona os textos
+        var windowHeight = window.innerHeight;
+    
+        // Verifica a visibilidade das imagens
+        images.forEach(function(image) {
+            var imageTop = image.getBoundingClientRect().top;
+            var imageBottom = image.getBoundingClientRect().bottom;
+        
+            if (imageTop < windowHeight && imageBottom >= 0) {
+                image.classList.add('visible');
+            }
+        });
+    
+        // Verifica a visibilidade dos textos
+        texts.forEach(function(text) {
+            var textTop = text.getBoundingClientRect().top;
+            var textBottom = text.getBoundingClientRect().bottom;
+        
+            if (textTop < windowHeight && textBottom >= 0) {
+                text.classList.add('visible');
+            }
+        });
+    }
+    // Adiciona a detecção de scroll
+    window.addEventListener('scroll', checkVisibility);
+    // Verifica a visibilidade ao carregar a página
+    window.addEventListener('load', checkVisibility);
 </script>

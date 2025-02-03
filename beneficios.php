@@ -103,35 +103,3 @@
     </body>
 
 </html>
-<script>
-    // Função para verificar se os elementos estão visíveis na tela
-    function checkVisibility() {
-        var images = document.querySelectorAll('.col-md-6 img');
-        var texts = document.querySelectorAll('.titulo, .subtitulo, .conteudo'); // Seleciona os textos
-        var windowHeight = window.innerHeight;
-    
-        // Verifica a visibilidade das imagens
-        images.forEach(function(image) {
-            var imageTop = image.getBoundingClientRect().top;
-            var imageBottom = image.getBoundingClientRect().bottom;
-        
-            if (imageTop < windowHeight && imageBottom >= 0) {
-                image.classList.add('visible');
-            }
-        });
-    
-        // Verifica a visibilidade dos textos
-        texts.forEach(function(text) {
-            var textTop = text.getBoundingClientRect().top;
-            var textBottom = text.getBoundingClientRect().bottom;
-        
-            if (textTop < windowHeight && textBottom >= 0) {
-                text.classList.add('visible');
-            }
-        });
-    }
-    // Adiciona a detecção de scroll
-    window.addEventListener('scroll', checkVisibility);
-    // Verifica a visibilidade ao carregar a página
-    window.addEventListener('load', checkVisibility);
-</script>
