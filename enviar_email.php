@@ -13,7 +13,7 @@
         $codigo_postal = $_POST['codigo_pais'];
         $telefone = $_POST['telefone'];
         $mensagem = $_POST['mensagem'];
-        $destinatario = "richard.souza@enelo.com.br";
+        $destinatario = "joas.rodrigues@enelo.com.br";
         $titulo = "Novo pedido de contato";
         $telefone = $codigo_postal . " " . $telefone;
 
